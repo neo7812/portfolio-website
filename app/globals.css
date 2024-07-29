@@ -1,0 +1,925 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+html {
+	scroll-behavior: smooth;
+}
+
+:root {
+	--base: #555;
+	--base-100: #f1f1f1;
+	--base-400: #555;
+	--base-800: #000;
+	--yellow: #ffda4b;
+	--yellow-100: #fffbe6;
+	--yellow-400: #ffda4b;
+	--yellow-800: #8b6f00;
+	--blue: #0a61ae;
+	--blue-100: #e2f8ff;
+	--blue-400: #61dafb;
+	--blue-800: #0a61ae;
+}
+
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-size: 20px;
+	padding-bottom:1000px;
+}
+
+a {
+	text-decoration: none;
+	color: var(--blue);
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+/* Modal.css */
+
+/* Keyframes for modal animations */
+@keyframes slideInFromLeft {
+	0% {
+	  transform: translateX(-100vw);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  
+  @keyframes slideOutToRight {
+	0% {
+	  transform: translateX(0);
+	}
+	100% {
+	  transform: translateX(100vw);
+	}
+  }
+  
+  @keyframes slideInFromTop {
+	0% {
+	  transform: translateY(-100%);
+	}
+	100% {
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes slideOutToTop {
+	0% {
+	  transform: translateY(0);
+	}
+	100% {
+	  transform: translateY(-100%);
+	}
+  }
+  
+  /* General styles for modals */
+  .modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7); /* Dim the background */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  .modal-content {
+	background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+	color: white;
+	padding: 30px;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	position: relative;
+	width: 90%;
+	max-width: 500px; /* Ensure it doesn't get too wide */
+	animation: slideInFromLeft 1s ease-in-out;
+  }
+  
+  .modal-content.feedback {
+	animation: none; /* No animation when in feedback mode */
+  }
+  
+  .modal-content.hidden {
+	animation: slideOutToRight 1s ease-in-out forwards;
+  }
+  
+  .success-modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7); /* Dim the background */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  .success-modal-content {
+	background: #4caf50; /* Green */
+	color: white;
+	padding: 30px;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	position: relative;
+	width: 90%;
+	max-width: 500px; /* Ensure it doesn't get too wide */
+	animation: slideInFromTop 0.5s ease-in-out;
+  }
+  
+  .success-modal-content.hidden {
+	animation: slideOutToTop 0.5s ease-in-out forwards;
+  }
+  
+  /* Button styles */
+  .modal-buttons button, .feedback-section button {
+	margin: 0 10px;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .modal-buttons .yes-button {
+	background: #4caf50; /* Green */
+	color: white;
+  }
+  
+  .modal-buttons .yes-button:hover {
+	background: #388e3c;
+	transform: scale(1.05);
+  }
+  
+  .modal-buttons .no-button {
+	background: #f44336; /* Red */
+	color: white;
+  }
+  
+  .modal-buttons .no-button:hover {
+	background: #d32f2f;
+	transform: scale(1.05);
+  }
+  
+  .feedback-section {
+	display: block; /* Ensure feedback section is visible */
+	text-align: center;
+  }
+  
+  .feedback-section textarea {
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+  }
+  
+  .feedback-section textarea::placeholder {
+	color: #bbb;
+  }
+  
+  .feedback-section button {
+	padding: 12px 24px;
+	background: #2196f3; /* Blue */
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .feedback-section button:hover {
+	background: #1976d2;
+	transform: scale(1.05);
+  }
+  
+
+header {
+	padding-top:10px;
+	padding-bottom:10px;
+	display:flex;
+	justify-content:space-between;
+	max-width:1440px;
+	margin:auto;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+
+	.logo-holder {
+		display:flex;
+		padding:10px;
+		align-items:center;
+		font-weight:600;
+		color: var(--base-800);
+		
+		.logo {
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			font-size:32px;
+			background-color: var(--base-100);
+			color: var(--base-100);
+			height:44px;
+			width:44px;
+			margin-right:20px;
+			border-radius:50%;
+		}
+		.logo-text {
+			flex:1;
+		}
+
+		:hover{
+			cursor: pointer;
+		}
+	}
+
+	nav {
+		display:flex;
+		align-items:center;
+		ul {
+			display:flex;
+			list-style-type: none;
+			gap:5px;
+			&::before {
+				
+				content: '';
+				height: 100vh;
+				left: 0;
+				top: 0;
+				position: absolute;
+				opacity: 0;
+				visibility: hidden;
+				width: 100%;
+				transition: all .3s;
+			  }
+			li {
+				display:inline-block;
+				border-bottom: 1px solid #ddd;
+				transform: translateY(-20px);
+      			transition: all .3s;
+				a {
+					background: #fff;
+					color: #404040;
+					display: block;
+					font-size: 18px;
+					font-weight: 700;
+					padding: 12px 20px;
+					text-align: left;
+					width: 100%;
+					transition: all .3s;
+					&:hover {
+					  color: coral;
+					}
+				}
+			}
+		}
+		.mobile-toggle {
+			display:none;
+			color:var(--base-800);
+			padding:10px;
+			@media (max-width:768px){
+				display:inline-block;
+				position:absolute;
+				top:20px;
+				right:20px;
+			}
+		}
+		.mobile-toggle svg {
+			cursor: pointer;
+		  }
+		  
+		  nav ul.active {
+			transition: max-height 0.3s ease-in-out;
+			max-height: 500px;
+		  }
+		  
+	}
+
+	@media (max-width: 1024px) {
+		flex-direction:column;
+		align-items:center;
+	}
+
+	@media (max-width: 768px) {
+		flex-direction:column;
+		align-items:center;
+		nav {
+			margin-top:10px;
+			width:100%;
+			ul {
+				display:none;
+				flex-direction:column;
+				text-align:center;
+				width:100%;
+				a {
+					width:100%;
+				}
+				&.active {
+					display:flex;
+				}
+			}
+		}
+	}
+}
+
+section {
+	max-width:1440px;
+	margin:auto;
+	gap:30px;
+	margin-top:30px;
+	margin-bottom:30px;
+
+	@media (max-width:1440px){
+		padding-left:30px;
+		padding-right:30px;
+	}
+}
+
+.button {
+	display:inline-block;
+	padding:10px 30px;
+	background-color: var(--blue);
+	color: var(--base-100);
+	border-radius:10px;
+	transition: ease 0.3s all;
+	&:hover {
+		text-decoration:none;
+		background-color: var(--base-800);
+	}
+	&.white,&.black {
+		background-color: white;
+		color: var(--base-800);
+		&:hover {
+			background-color: black;
+			color: coral;
+		}
+	}
+}
+
+h1 {
+	font-size:64px;
+	line-height:1;
+	margin-bottom:10px;
+	small {
+		display:block;
+		font-weight:100;
+	}
+	@media (max-width:1024px){
+		font-size:48px;
+	}
+}
+
+.hero {
+	display:flex;
+	@media (max-width:1024px){
+		flex-direction:column;
+	}
+	.hero-blue {
+		flex:1;
+		background-color: var(--blue-100);
+		border-radius:30px;
+		padding:30px;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		span {
+			@media (max-width:768px){
+				display:none;
+			}
+		}
+		.call-to-action {
+			margin-top:20px;
+			margin-bottom:10px;
+			a {
+				margin-right:10px;
+				margin-bottom:10px;
+			}
+		}
+		.social-links {
+			a {
+				&:hover {
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	.hero-yellow {
+		flex:1;
+		background-color: var(--yellow-400);
+		border-radius:30px;
+		padding:0px 30px;
+		display:flex;
+		justify-content:center;
+		align-items:flex-end;
+		
+		overflow:hidden;
+		img {
+			margin-top:-60px;
+			max-width:420px;
+			
+		}
+	}
+}
+
+.logos {
+	background-color: var(--base-100);
+	border-radius:30px;
+	padding:30px 0px;
+	@media (max-width:1440px){
+		border-radius:0px;
+	}
+	.marquee {
+		width:100vw;
+		max-width:100%;
+		height:128px;
+		overflow:hidden;
+		position:relative;
+		.track {
+			position:absolute;
+			white-space:nowrap;
+			will-change:transform;
+			animation: marquee 40s linear infinite;
+			display:flex;
+			gap:10px;
+		}
+	}
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+h2 {
+	font-size:64px;
+	line-height:1;
+	margin-bottom:10px;
+	text-align:center;
+	color: var(--base-800);
+	padding:30px;
+	small {
+		display:block;
+		font-weight:100;
+		font-size:0.5em;
+		color:var(--base);
+	}
+	@media (max-width:1024px){
+		font-size:48px;
+	}
+}
+
+h3 {
+	font-size:32px;
+	font-weight:600;
+	line-height:1;
+	margin-bottom:20px;
+	color: var(--base-800);
+}
+
+.skills {
+	.holder-blue {
+		background-color: var(--blue-100);
+		border-radius:30px;
+		padding:30px;
+		display:flex;
+		@media(max-width:1024px){
+			flex-direction:column;
+		}
+		.left-column {
+			flex:1;
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				list-style-type: none;
+				gap:10px;
+				margin-right:100px;
+				margin-bottom:20px;
+				li {
+					display:inline-block;
+					background-color: var(--blue-400);
+					padding:10px 20px;
+					border-radius:15px;
+					margin-bottom:10px;
+				}
+			}
+		}
+		.right-column {
+			flex:1;
+			p {
+				margin-bottom:20px;
+			}
+		}
+	}
+}
+
+.work-experience {
+	.jobs {
+		display:flex;
+		gap:30px;
+		@media(max-width:1024px){
+			flex-direction:column;
+		}
+		article {
+			background-color: var(--yellow-100);
+			padding:30px;
+			border-radius:30px;
+			flex:1;
+			h3 {
+				margin-top:20px;
+				margin-bottom:10px;
+			}
+			div {
+				font-weight:600;
+				margin-bottom:5px;
+				color: var(--base-800);
+			}
+			p {
+				margin-bottom:10px;
+			}
+			figure {
+				width:100%;
+				padding-top:56.25%;
+				overflow:hidden;
+				position:relative;
+				border-radius:15px;
+				img {
+					position:absolute;
+					top:0;
+					left:0;
+					height:100%;
+					object-fit:cover;
+					transition: ease 3s all;
+				}
+				figcaption {
+					position:absolute;
+					bottom:0;
+					left:0;
+					right:0;
+					background-color: rgba(0,0,0,0.5);
+					color: var(--base-100);
+					text-align:center;
+					padding:10px;
+					opacity:0;
+					visibility:hidden;
+					transition: ease 0.3s all;
+				}
+
+				&:hover {
+					figcaption {
+						opacity:1;
+						visibility:visible;
+					}
+					img {
+						transform: scale(1.2);
+					}
+				}
+
+			}
+		}
+	}
+}
+
+.bento {
+	.bento-grid {
+		display:grid;
+		grid-gap:30px;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		height:960px;
+		@media(max-width:1024px){
+			grid-template-rows: repeat(8, 1fr);
+		}
+		@media(max-width:768px){
+			display:flex;
+			flex-direction:column;
+			gap:30px;
+			height:auto;
+		}
+		.bento-item {
+			padding:30px;
+			background-color: var(--base-100);
+			border-radius:15px;
+			position:relative;
+			overflow:hidden;
+			img {
+				position:absolute;
+				top:0;
+				left:0;
+				height:100%;
+				object-fit:cover;
+				transition: ease 3s all;
+			}
+			&:hover {
+				img {
+					transform: scale(1.2);
+				}
+			}
+			@media(max-width:768px){
+				height:240px;
+			}
+			&:nth-child(1) {
+				grid-column: span 2;
+				grid-row: span 2;
+				@media(max-width:1024px){
+					grid-column: span 2;
+					grid-row: span 2;
+				}
+			}
+			&:nth-child(2) {
+				grid-column: span 2;
+				grid-row: span 1;
+				@media(max-width:1024px){
+					grid-column: span 3;
+					grid-row: span 2;
+				}
+			}
+			&:nth-child(3) {
+				grid-column: span 1;
+				grid-row: span 1;
+				@media(max-width:1024px){
+					grid-column: span 3;
+					grid-row: span 2;
+				}
+			}
+			&:nth-child(4) {
+				grid-column: span 1;
+				grid-row: span 1;
+				@media(max-width:1024px){
+					grid-column: span 2;
+					grid-row: span 4;
+				}
+			}
+			&:nth-child(5) {
+				grid-column: span 2;
+				grid-row: span 1;
+				@media(max-width:1024px){
+					grid-column: span 3;
+					grid-row: span 2;
+				}
+			}
+			&:nth-child(6) {
+				grid-column: span 5;
+				grid-row: span 3;
+				@media(max-width:1024px){
+					grid-column: span 5;
+					grid-row: span 2;
+				}
+			}
+		}
+	}
+}
+
+.chatbot {
+	.chatbot-blue {
+		background-color: var(--blue-100);
+		border-radius:30px;
+		padding:30px;
+		gap:30px;
+		display:flex;
+		@media (max-width:1024px){
+			flex-direction:column;
+		}
+		p {
+			margin-bottom:30px;
+		}
+		.chat-info {
+			flex:3;
+			padding-right:30px;
+		}
+		.chat-box {
+			flex:4;
+			background:white;
+			border-radius:15px;
+			padding:30px;
+			display:flex;
+			flex-direction:column;
+			.scroll-area {
+				max-height:300px;
+				height:300px;
+				overflow-y:scroll;
+				ul {
+					display:flex;
+					flex-direction:column;
+					justify-content:flex-end;
+					gap:15px;
+					li {
+						display:flex;
+						align-items:center;
+						gap:15px;
+
+						&.user{
+							text-align:right;
+							justify-content:flex-end;
+							flex-direction:row-reverse;
+							span {
+								background-color: var(--yellow);
+							}
+						}
+
+						span {
+							background-color: var(--blue-400);
+							width:64px;
+							height:64px;
+							border-radius:50%;
+							display:inline-flex;
+							align-items:center;
+							justify-content:center;
+							@media(max-width:768px){
+								width:48px;
+								height:48px;
+							}
+						}
+						div {
+							flex:1;
+						}
+					}
+				}
+			}
+
+			.chat-message {
+				display:flex;
+				margin-top:15px;
+				gap:15px;
+				input {
+					border-radius:10px;
+					flex:1;
+					padding:15px;
+					border:1px solid transparent;
+					background-color: var(--base-100);
+					&:hover {
+						outline:none;
+						background-color:white;
+						border:1px solid var(--base-100);
+					}
+					&:focus {
+						outline:none;
+						background-color:white;
+						border:1px solid var(--base-100);
+					}
+				}
+				button {
+					background-color: var(--blue-800);
+					border:none;
+					cursor:pointer;
+					color: var(--base-100);
+				}
+			}
+		}
+	}
+}
+
+/* Dark mode styles */
+body.dark-mode {
+	background-color: #1a1a1a;
+	color: #f1f1f1;
+	transition: background-color 0.3s ease, color 0.3s ease;
+
+	/* Root variables for dark mode */
+	:root {
+		--base: #a0a0a0;
+		--base-100: #2a2a2a;
+		--base-400: #a0a0a0;
+		--base-800: #f1f1f1;
+		--yellow: #c7ab3b;
+		--yellow-100: #3d3620;
+		--yellow-400: #c7ab3b;
+		--yellow-800: #f1e6b8;
+		--blue: #1c8bd6;
+		--blue-100: #1c3a4d;
+		--blue-400: #1c8bd6;
+		--blue-800: #a7d8f7;
+	}
+
+	/* Header styles */
+	header {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.logo-holder {
+		color: var(--base-800);
+
+		.logo-text {
+			color: var(--base-100);
+		}
+
+		.logo {
+			background-color: var(--base-800);
+		}
+	}
+
+	header nav ul li a {
+		color: var(--base-100);
+		background-color: var(--base-800);
+	}
+
+	header nav ul li a:hover {
+		color: coral;
+	}
+
+	.mobile-toggle {
+		color: var(--base-100);
+	}
+
+	/* Button styles */
+	.button {
+		background-color: var(--blue-800);
+		color: var(--base-100);
+	}
+
+	.button:hover {
+		background-color: var(--base-800);
+		color: coral;
+	}
+
+	.button.white {
+		background-color: var(--base-800);
+		color: var(--base-100);
+	}
+
+	.button.white:hover {
+		color: coral;
+	}
+
+	.button.black {
+		background-color: var(--base-800);
+		color: var(--base-100);
+	}
+
+	.button.black:hover {
+		color: coral;
+	}
+
+	/* Header, h1, h2, h3 */
+	h1, h2, p, h3 {
+		color: var(--base-800);
+	}
+
+	h2 {
+		color: var(--base-100);
+	}
+
+	/* Skills section */
+	.skills .holder-blue {
+		background-color: var(--blue-100);
+	}
+
+	.skills .holder-blue .left-column ul li {
+		background-color: var(--blue-400);
+		color: var(--base-800);
+	}
+
+	/* Work Experience section */
+	.work-experience .jobs article {
+		background-color: var(--yellow-100);
+	}
+
+	/* Bento section */
+	.bento .bento-grid .bento-item {
+		background-color: var(--base-100);
+	}
+
+	/* Chatbot section */
+	.chatbot .chatbot-blue {
+		background-color: var(--blue-100);
+	}
+
+	.chatbot .chatbot-blue .chat-box {
+		background: var(--base-800);
+	}
+
+	.chatbot .chatbot-blue .chat-box .chat-message input {
+		background-color: var(--base-100);
+		color: var(--base-800);
+	}
+
+	.chatbot .chatbot-blue .chat-box .chat-message input:hover,
+	.chatbot .chatbot-blue .chat-box .chat-message input:focus {
+		background-color: var(--base-100);
+		border: 1px solid var(--base-400);
+	}
+
+	.chatbot .chatbot-blue .chat-box .button.black {
+		background: var(--blue-800);
+		color: var(--base-100);
+	}
+
+	.chatbot .chatbot-blue .chat-box .button.black:hover {
+		background-color: var(--blue-800);
+		color: var(--base-800);
+	}
+}
