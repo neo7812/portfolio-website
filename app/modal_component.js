@@ -6,15 +6,15 @@ function Modal({ onClose }) {
   const [feedback, setFeedback] = useState("");
   const [isSuccessModal, setIsSuccessModal] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (isSuccessModal) {
       const timer = setTimeout(() => {
         setIsClosing(true);
-        setTimeout(() => {
-          onClose();
-        }, 500); 
-      }, 2000); 
+        const closeTimer = setTimeout(onClose, 500);
+        return () => clearTimeout(closeTimer);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -32,14 +32,35 @@ function Modal({ onClose }) {
     setFeedback(e.target.value);
   };
 
-  const handleSubmitFeedback = () => {
+  const handleSubmitFeedback = async () => {
     if (feedback.trim() === "") {
       alert("Feedback cannot be empty!");
       return;
     }
-    console.log("Feedback submitted:", feedback);
-    setIsFeedback(false); 
-    setIsSuccessModal(true); 
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mkgwrdqk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: feedback }),
+      });
+
+      if (response.ok) {
+        setIsFeedback(false);
+        setIsSuccessModal(true);
+      } else {
+        throw new Error("Failed to submit feedback");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to submit feedback. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -64,8 +85,10 @@ function Modal({ onClose }) {
                   placeholder="Tell me how I can make changes..." 
                   value={feedback} 
                   onChange={handleFeedbackChange}
+                  aria-label="Feedback input"
                 ></textarea>
-                <button onClick={handleSubmitFeedback}>Submit Feedback</button>
+                <button onClick={handleSubmitFeedback} disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Feedback'}</button>
               </div>
             )}
           </div>

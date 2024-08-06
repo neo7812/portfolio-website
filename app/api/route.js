@@ -1,42 +1,24 @@
-import { OpenAIClient, AzureKeyCredential } from '@azure/openai';
+import { AzureOpenAI } from "openai";
 import { NextResponse } from 'next/server';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
 const apiKey = process.env.AZURE_OPENAI_API_KEY;
-const model = process.env.AZURE_OPENAI_MODEL;
+const deployment = process.env.AZURE_OPENAI_MODEL || "gpt-35-turbo";
+const apiVersion = "2024-04-01-preview";
 
-export async function POST(req){
-	try{
-	
-	const { messages } = await req.json();
-
-	const client = new OpenAIClient(endpoint, new AzureKeyCredential(apiKey));
-
-	messages.unshift({
-		role: 'system',
-		content: `You are PortfolioGPT, answering only questions based on the resume provided.
-Resume:
-${DATA_RESUME}
-
-Help users learn more about Saurabh from his resume.`
-	});
-
-	const response = await client.getChatCompletions({
-		model: model, 
-		messages: messages,
-		maxTokens: 128,
-	});
-
-	return NextResponse.json({ 
-		message: response.choices[0].message.content
-	 });
-	} catch (error) {
-        console.error('Error:', error);
-        return NextResponse.json({
-            message: 'There was an error processing your request.'
-        }, { status: 500 });
-    }
+if (!endpoint || !apiKey || !deployment) {
+  throw new Error("Missing required environment variables");
 }
+
+const client = new AzureOpenAI({
+  apiKey,
+  endpoint,
+  deployment,
+  apiVersion,
+});
 
 const DATA_RESUME = `
 SAURABH UPADHYAY
@@ -77,5 +59,36 @@ Verbal and Written Communication
 Collaborative
 Quick to adapt
 Detail-Oriented
-Diligent`
+Diligent`;
 
+export async function POST(req) {
+    try {
+        const { messages } = await req.json();
+
+        const systemMessage = {
+            role: 'system',
+            content: `You are PortfolioGPT, answering only questions based on the resume provided.
+Resume:
+${DATA_RESUME}
+
+Help users learn more about Saurabh from his resume.`
+        };
+
+        const fullMessages = [systemMessage, ...messages];
+
+        const response = await client.chat.completions.create({
+            messages: fullMessages,
+            max_tokens: 128
+        });
+
+        return NextResponse.json({
+            message: response.choices[0].message.content
+        });
+    } catch (error) {
+        console.error('Error:', error);
+        return NextResponse.json({
+            message: 'There was an error processing your request.',
+            error: error.message
+        }, { status: 500 });
+    }
+}
