@@ -1,7 +1,7 @@
-"use client";
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Modal from "./modal_component";
+'use client';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Modal from './modal_component';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,7 +61,10 @@ export default function Home() {
       console.error('Error:', error);
       setMessages([
         ...newMessages,
-        { role: 'assistant', content: 'There was an error processing your request.' },
+        {
+          role: 'assistant',
+          content: 'There was an error processing your request.',
+        },
       ]);
     }
   };
@@ -123,9 +126,15 @@ export default function Home() {
                 <small>Hi I&apos;m</small>
                 Saurabh Upadhyay
               </h1>
-              <p>Aspiring Developer who takes keen interest in learning new tech stacks.</p>
+              <p>
+                Aspiring Developer who takes keen interest in learning new tech
+                stacks.
+              </p>
               <div className="call-to-action">
-                <a href="./Saurabh Upadhyay new resume-4.pdf" className="button black">
+                <a
+                  href="./Saurabh Upadhyay new resume-4.pdf"
+                  className="button black"
+                >
                   View Resume
                 </a>
                 <a href="mailto:saurabhu294@gmail.com" className="button white">
@@ -134,16 +143,32 @@ export default function Home() {
               </div>
               <div className="social-links">
                 <a href="https://github.com/neo7812">
-                  <Image src="/imgs/github.png" alt="GitHub" width={48} height={48} />
+                  <Image
+                    src="/imgs/github.png"
+                    alt="GitHub"
+                    width={48}
+                    height={48}
+                  />
                 </a>
                 <a href="https://www.linkedin.com/in/saurabh-upadhyay-60b2721a7/">
-                  <Image src="/imgs/linkedin.png" alt="LinkedIn" width={48} height={48} />
+                  <Image
+                    src="/imgs/linkedin.png"
+                    alt="LinkedIn"
+                    width={48}
+                    height={48}
+                  />
                 </a>
               </div>
             </div>
           </div>
           <div className="hero-yellow">
-            <Image src="/imgs/hero-image.png" alt="Saurabh Upadhyay" layout="responsive" width={700} height={475} />
+            <Image
+              src="/imgs/hero-image.png"
+              alt="Saurabh Upadhyay"
+              layout="responsive"
+              width={700}
+              height={475}
+            />
           </div>
         </section>
         <section className="logos container">
@@ -151,18 +176,68 @@ export default function Home() {
             <div className="track">
               <Image src="/imgs/html.png" alt="HTML" width={128} height={128} />
               <Image src="/imgs/css.png" alt="CSS" width={128} height={128} />
-              <Image src="/imgs/javascript.png" alt="JS" width={128} height={128} />
-              <Image src="/imgs/react.png" alt="React" width={128} height={128} />
-              <Image src="/imgs/nextjs.png" alt="Next JS" width={128} height={128} />
-              <Image src="/imgs/azure.png" alt="Azure" width={128} height={128} />
-              <Image src="/imgs/vscode.png" alt="VS Code" width={128} height={128} />
+              <Image
+                src="/imgs/javascript.png"
+                alt="JS"
+                width={128}
+                height={128}
+              />
+              <Image
+                src="/imgs/react.png"
+                alt="React"
+                width={128}
+                height={128}
+              />
+              <Image
+                src="/imgs/nextjs.png"
+                alt="Next JS"
+                width={128}
+                height={128}
+              />
+              <Image
+                src="/imgs/azure.png"
+                alt="Azure"
+                width={128}
+                height={128}
+              />
+              <Image
+                src="/imgs/vscode.png"
+                alt="VS Code"
+                width={128}
+                height={128}
+              />
               <Image src="/imgs/html.png" alt="HTML" width={128} height={128} />
               <Image src="/imgs/css.png" alt="CSS" width={128} height={128} />
-              <Image src="/imgs/javascript.png" alt="JS" width={128} height={128} />
-              <Image src="/imgs/react.png" alt="React" width={128} height={128} />
-              <Image src="/imgs/nextjs.png" alt="Next JS" width={128} height={128} />
-              <Image src="/imgs/azure.png" alt="Azure" width={128} height={128} />
-              <Image src="/imgs/vscode.png" alt="VS Code" width={128} height={128} />
+              <Image
+                src="/imgs/javascript.png"
+                alt="JS"
+                width={128}
+                height={128}
+              />
+              <Image
+                src="/imgs/react.png"
+                alt="React"
+                width={128}
+                height={128}
+              />
+              <Image
+                src="/imgs/nextjs.png"
+                alt="Next JS"
+                width={128}
+                height={128}
+              />
+              <Image
+                src="/imgs/azure.png"
+                alt="Azure"
+                width={128}
+                height={128}
+              />
+              <Image
+                src="/imgs/vscode.png"
+                alt="VS Code"
+                width={128}
+                height={128}
+              />
             </div>
           </div>
         </section>
@@ -188,12 +263,14 @@ export default function Home() {
             <div className="right-column">
               <h3>A bit about me</h3>
               <p>
-                Hi I&apos;m Saurabh Upadhyay, Aspiring developer who takes keen interest in
-                learning different tech stacks and implementing them in projects.
+                Hi I&apos;m Saurabh Upadhyay, Aspiring developer who takes keen
+                interest in learning different tech stacks and implementing them
+                in projects.
               </p>
               <p>
-                I have used Azure AI to create a chatbot that can help answer questions about
-                my resume. Feel free to ask anything related to resume.
+                I have used Azure AI to create a chatbot that can help answer
+                questions about my resume. Feel free to ask anything related to
+                resume.
               </p>
             </div>
           </div>
@@ -204,7 +281,13 @@ export default function Home() {
             <article>
               <figure>
                 <div>
-                  <Image src="/imgs/workplace-1.jpg" alt="Workplace-Genpact" width={700} height={700} style={{width: '100%', height: '100%'}} />
+                  <Image
+                    src="/imgs/workplace-1.jpg"
+                    alt="Workplace-Genpact"
+                    width={700}
+                    height={700}
+                    style={{ width: '100%', height: '100%' }}
+                  />
                   <figcaption>Workplace - Genpact</figcaption>
                 </div>
               </figure>
@@ -215,61 +298,110 @@ export default function Home() {
           </div>
         </section>
         <section id="projects" className="bento container">
-          <h2>
-            Projects
-          </h2>
+          <h2>Projects</h2>
           <div className="bento-grid">
             <a href="#" className="bento-item">
-              <Image src="/imgs/bento-1.jpg" alt="BGCCI" width={400} height={300} style={{width: '100%', height: '100%'}} />
+              <Image
+                src="/imgs/bento-1.jpg"
+                alt="BGCCI"
+                width={400}
+                height={300}
+                style={{ width: '100%', height: '100%' }}
+              />
             </a>
             <a href="#" className="bento-item">
-              <Image src="/imgs/bento-2.jpg" alt="Churhview" width={400} height={300} style={{width: '100%', height: '100%'}} />
+              <Image
+                src="/imgs/bento-2.jpg"
+                alt="Churhview"
+                width={400}
+                height={300}
+                style={{ width: '100%', height: '100%' }}
+              />
             </a>
             <a href="#" className="bento-item">
-              <Image src="/imgs/bento-3.jpg" alt="Harley" width={400} height={300} style={{width: '100%', height: '100%'}} />
+              <Image
+                src="/imgs/bento-3.jpg"
+                alt="Harley"
+                width={400}
+                height={300}
+                style={{ width: '100%', height: '100%' }}
+              />
             </a>
             <a href="#" className="bento-item">
-              <Image src="/imgs/bento-5.jpg" alt="Bunbury" width={400} height={300} style={{width: '100%', height: '100%'}} />
+              <Image
+                src="/imgs/bento-5.jpg"
+                alt="Bunbury"
+                width={400}
+                height={300}
+                style={{ width: '100%', height: '100%' }}
+              />
             </a>
             <a href="#" className="bento-item">
-              <Image src="/imgs/bento-6.jpg" alt="Running" width={400} height={300} style={{width: '100%', height: '100%'}} />
+              <Image
+                src="/imgs/bento-6.jpg"
+                alt="Running"
+                width={400}
+                height={300}
+                style={{ width: '100%', height: '100%' }}
+              />
             </a>
             <a href="#" className="bento-item">
-              <Image src="/imgs/bento-7.jpg" alt="School" width={400} height={300} style={{width: '100%', height: '100%'}} />
+              <Image
+                src="/imgs/bento-7.jpg"
+                alt="School"
+                width={400}
+                height={300}
+                style={{ width: '100%', height: '100%' }}
+              />
             </a>
           </div>
         </section>
         <section className="chatbot container">
           <h2>
-            <small>
-              Talk to me
-            </small>
+            <small>Talk to me</small>
             Chatbot
           </h2>
           <div className="chatbot-blue">
             <div className="chat-info">
               <h3>Azure AI Chatbot</h3>
-              <p>I&apos;ve put together a chatbot here which knows all my skills, work experience and has a copy of my Resume. You can use it to ask questions about me to get a better idea of who I am and what I&apos;ve done.</p>
-              <p>You can also download my resume here if you want to take a look at it.  I&apos;m currently looking for new opportunities so if you have a project you think I&apos;d be a good fit for, please get in touch!</p>
-              <a href="./Saurabh Upadhyay new resume-4.pdf" className="button black">Download Resume</a>
+              <p>
+                I&apos;ve put together a chatbot here which knows all my skills,
+                work experience and has a copy of my Resume. You can use it to
+                ask questions about me to get a better idea of who I am and what
+                I&apos;ve done.
+              </p>
+              <p>
+                You can also download my resume here if you want to take a look
+                at it. I&apos;m currently looking for new opportunities so if
+                you have a project you think I&apos;d be a good fit for, please
+                get in touch!
+              </p>
+              <a
+                href="./Saurabh Upadhyay new resume-4.pdf"
+                className="button black"
+              >
+                Download Resume
+              </a>
             </div>
             <div className="chat-box">
               <div className="scroll-area">
                 <ul id="chat-log">
                   {messages.map((message, index) => (
                     <li key={index} className={`${message.role}`}>
-                      <span className={`avatar`}>{message.role === 'user' ? 'You' : 'AI'}</span>
+                      <span className={`avatar`}>
+                        {message.role === 'user' ? 'You' : 'AI'}
+                      </span>
                       <div className="message">{message.content}</div>
                     </li>
                   ))}
                 </ul>
               </div>
               <form onSubmit={submitForm} className="chat-message">
-                <input 
-                  type="text" 
-                  placeholder="Hey Saurabh, what skills are you best at?" 
-                  value={messageInput} 
-                  onChange={e => setMessageInput(e.target.value)} 
+                <input
+                  type="text"
+                  placeholder="Hey Saurabh, what skills are you best at?"
+                  value={messageInput}
+                  onChange={(e) => setMessageInput(e.target.value)}
                 />
                 <button className="button black">Send</button>
               </form>

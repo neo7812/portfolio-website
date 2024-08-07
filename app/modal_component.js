@@ -3,7 +3,7 @@ import './globals.css';
 
 function Modal({ onClose }) {
   const [isFeedback, setIsFeedback] = useState(false);
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState('');
   const [isSuccessModal, setIsSuccessModal] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,18 +33,18 @@ function Modal({ onClose }) {
   };
 
   const handleSubmitFeedback = async () => {
-    if (feedback.trim() === "") {
-      alert("Feedback cannot be empty!");
+    if (feedback.trim() === '') {
+      alert('Feedback cannot be empty!');
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/mkgwrdqk", {
-        method: "POST",
+      const response = await fetch('https://formspree.io/f/mkgwrdqk', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message: feedback }),
       });
@@ -53,11 +53,11 @@ function Modal({ onClose }) {
         setIsFeedback(false);
         setIsSuccessModal(true);
       } else {
-        throw new Error("Failed to submit feedback");
+        throw new Error('Failed to submit feedback');
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("Failed to submit feedback. Please try again.");
+      console.error('Error:', error);
+      alert('Failed to submit feedback. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -65,24 +65,36 @@ function Modal({ onClose }) {
 
   return (
     <div className={`modal-overlay ${isClosing ? 'hidden' : ''}`}>
-      <div className={`modal-content ${isFeedback ? 'feedback' : ''} ${isSuccessModal ? 'success' : ''}`}>
+      <div
+        className={`modal-content ${isFeedback ? 'feedback' : ''} ${isSuccessModal ? 'success' : ''}`}
+      >
         {!isSuccessModal ? (
           !isFeedback ? (
             <>
               <div className="message">
-                <p>Thank you for the visit. Hope you find this website interactive!</p>
+                <p>
+                  Thank you for the visit. Hope you find this website
+                  interactive!
+                </p>
               </div>
               <div className="modal-buttons">
-                <button className="yes-button" onClick={handleYes}>Yes</button>
-                <button className="no-button" onClick={handleNo}>No</button>
+                <button className="yes-button" onClick={handleYes}>
+                  Yes
+                </button>
+                <button className="no-button" onClick={handleNo}>
+                  No
+                </button>
               </div>
             </>
           ) : (
             <div className="feedback-section">
-              <p>I&apos;m sorry to hear that. I&apos;m working to make the website more interactive. Please provide your feedback:</p>
-              <textarea 
-                placeholder="Tell me how I can make changes..." 
-                value={feedback} 
+              <p>
+                I&apos;m sorry to hear that. I&apos;m working to make the
+                website more interactive. Please provide your feedback:
+              </p>
+              <textarea
+                placeholder="Tell me how I can make changes..."
+                value={feedback}
                 onChange={handleFeedbackChange}
                 aria-label="Feedback input"
               ></textarea>
@@ -93,7 +105,10 @@ function Modal({ onClose }) {
           )
         ) : (
           <div className="success-message">
-            <p>Thank you for your feedback! I hope you visit my website more often.</p>
+            <p>
+              Thank you for your feedback! I hope you visit my website more
+              often.
+            </p>
           </div>
         )}
       </div>

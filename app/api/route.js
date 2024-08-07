@@ -1,4 +1,4 @@
-import { AzureOpenAI } from "openai";
+import { AzureOpenAI } from 'openai';
 import { NextResponse } from 'next/server';
 import dotenv from 'dotenv';
 
@@ -6,11 +6,11 @@ dotenv.config();
 
 const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
 const apiKey = process.env.AZURE_OPENAI_API_KEY;
-const deployment = process.env.AZURE_OPENAI_MODEL || "gpt-35-turbo";
-const apiVersion = "2024-04-01-preview";
+const deployment = process.env.AZURE_OPENAI_MODEL || 'gpt-35-turbo';
+const apiVersion = '2024-04-01-preview';
 
 if (!endpoint || !apiKey || !deployment) {
-  throw new Error("Missing required environment variables");
+  throw new Error('Missing required environment variables');
 }
 
 const client = new AzureOpenAI({
@@ -62,33 +62,36 @@ Detail-Oriented
 Diligent`;
 
 export async function POST(req) {
-    try {
-        const { messages } = await req.json();
+  try {
+    const { messages } = await req.json();
 
-        const systemMessage = {
-            role: 'system',
-            content: `You are PortfolioGPT, answering only questions based on the resume provided.
+    const systemMessage = {
+      role: 'system',
+      content: `You are PortfolioGPT, answering only questions based on the resume provided.
 Resume:
 ${DATA_RESUME}
 
-Help users learn more about Saurabh from his resume.`
-        };
+Help users learn more about Saurabh from his resume.`,
+    };
 
-        const fullMessages = [systemMessage, ...messages];
+    const fullMessages = [systemMessage, ...messages];
 
-        const response = await client.chat.completions.create({
-            messages: fullMessages,
-            max_tokens: 128
-        });
+    const response = await client.chat.completions.create({
+      messages: fullMessages,
+      max_tokens: 128,
+    });
 
-        return NextResponse.json({
-            message: response.choices[0].message.content
-        });
-    } catch (error) {
-        console.error('Error:', error);
-        return NextResponse.json({
-            message: 'There was an error processing your request.',
-            error: error.message
-        }, { status: 500 });
-    }
+    return NextResponse.json({
+      message: response.choices[0].message.content,
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    return NextResponse.json(
+      {
+        message: 'There was an error processing your request.',
+        error: error.message,
+      },
+      { status: 500 }
+    );
+  }
 }

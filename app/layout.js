@@ -1,16 +1,16 @@
-import "./globals.css";
-import { Open_Sans } from 'next/font/google'
+import './globals.css';
+import { Open_Sans } from 'next/font/google';
 
 // Initialize the font
 const openSans = Open_Sans({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-open-sans',
-})
+});
 
 export const metadata = {
-  title: "Website Portfolio",
-  description: "Portfolio Web Design",
+  title: 'Website Portfolio',
+  description: 'Portfolio Web Design',
   icons: {
     icon: '/imgs/favicon.jpg',
   },
