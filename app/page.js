@@ -76,7 +76,7 @@ export default function Home() {
           <button onClick={toggleDarkMode} className="logo">
             {isDarkMode ? '☽' : '🔆'}
           </button>
-          <div className="logo-text" onClick={handleHeadingClick}>
+          <div className="logo-text">
             Portfolio Website
           </div>
         </h3>
@@ -95,6 +95,9 @@ export default function Home() {
               <a href="mailto:saurabhu294@gmail.com" className="button">
                 Contact Me
               </a>
+            </li>
+            <li>
+            <div className="hilogo" onClick={handleHeadingClick}>✍</div>
             </li>
           </ul>
           <a href="#" className="mobile-toggle" onClick={toggleMobileMenu}>
