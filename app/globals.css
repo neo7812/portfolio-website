@@ -23,6 +23,13 @@ html {
   --blue-400: #61dafb;
   --blue-800: #0a61ae;
 }
+body {
+  background: url('https://www.transparenttextures.com/patterns/marble.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e0eafc; /* Backup color */
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -30,6 +37,7 @@ body {
   font-style: normal;
   font-size: 20px;
   padding-bottom: 20px;
+  
 }
 
 a {
