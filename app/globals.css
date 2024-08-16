@@ -37,7 +37,6 @@ body {
   font-style: normal;
   font-size: 20px;
   padding-bottom: 20px;
-  
 }
 
 a {
@@ -251,6 +250,13 @@ header {
     }
     .logo-text {
       flex: 1;
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: -0.05em;
+      background: linear-gradient(to bottom, black, #001e80);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
     }
   }
 
@@ -291,9 +297,8 @@ header {
             color: coral;
           }
         }
-        .hilogo{
-          border:5px
-          solid red;
+        .hilogo {
+          border: 5px solid red;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -304,12 +309,12 @@ header {
           width: 50px;
           margin-left: 20px;
           border-radius: 50%;
-          cursor: pointer; 
-          padding: 16px; 
+          cursor: pointer;
+          padding: 16px;
         }
       }
     }
-    
+
     .mobile-toggle {
       display: none;
       color: var(--base-800);
@@ -560,7 +565,7 @@ h3 {
       flex-direction: column;
     }
     article {
-      background-color: var(--yellow-100);
+      background: var(--blue-100);
       padding: 30px;
       border-radius: 30px;
       flex: 1;
@@ -710,7 +715,11 @@ h3 {
 
 .chatbot {
   .chatbot-blue {
-    background-color: var(--blue-100);
+    background: radial-gradient(
+      ellipse 200% 100% at bottom left,
+      #183ec2,
+      #eaeefe 66%
+    );
     border-radius: 30px;
     padding: 30px;
     gap: 30px;
