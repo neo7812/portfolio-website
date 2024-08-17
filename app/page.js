@@ -303,16 +303,19 @@ export default function Home() {
         <section id="projects" className="bento container">
           <h2>Projects</h2>
           <div className="bento-grid">
-            <a href="#" className="bento-item">
+            <a
+              href="https://nextjs-project-beta-one.vercel.app/"
+              className="bento-item"
+            >
               <Image
-                src="/imgs/bento-1.jpg"
+                src="/imgs/bento-1.png"
                 alt="BGCCI"
                 width={400}
                 height={300}
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            <a href="#" className="bento-item">
+            {/* <a href="#" className="bento-item">
               <Image
                 src="/imgs/bento-2.jpg"
                 alt="Churhview"
@@ -347,10 +350,13 @@ export default function Home() {
                 height={300}
                 style={{ width: '100%', height: '100%' }}
               />
-            </a>
-            <a href="#" className="bento-item">
+            </a> */}
+            <a
+              href="https://saas-landing-page-wine.vercel.app/"
+              className="bento-item"
+            >
               <Image
-                src="/imgs/bento-7.jpg"
+                src="/imgs/bento-7.png"
                 alt="School"
                 width={400}
                 height={300}
