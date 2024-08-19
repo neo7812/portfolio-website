@@ -135,7 +135,7 @@ export default function Home() {
               </p>
               <div className="call-to-action">
                 <a
-                  href="./Saurabh Upadhyay new resume-4.pdf"
+                  href="./saurabhresume.pdf"
                   className="button black"
                 >
                   View Resume
@@ -386,7 +386,7 @@ export default function Home() {
                 get in touch!
               </p>
               <a
-                href="./Saurabh Upadhyay new resume-4.pdf"
+                href="./saurabhresume.pdf"
                 className="button black"
               >
                 Download Resume
