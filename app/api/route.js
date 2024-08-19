@@ -21,46 +21,8 @@ const client = new AzureOpenAI({
 });
 
 const DATA_RESUME = `
-SAURABH UPADHYAY
-saurabhu294@gmail.com 9936498445
-SUMMARY
-Enthusiastic team player ready to contribute to company success. I take keen interest in algorithms and love problem
-solving. Seeking opportunities to further enhance my technical skills.
-EXPERIENCE
-Senior Associate
-Genpact September 2023 - Present IN, UTTAR , PRADESH, Noida
-Intern
-Genpact February 2023 - June 2023, IN, UTTAR PRADESH, Noida
-PROJECTS
-FB DM HELPDESK
-This app will allow clients to connect their fb accounts, listen to their messenger messages, and reply to them within the
-application.
-•
-• Tech-stack used: HTML5,CSS3,JavaScript,Node.js,Express.js
-• Database: MongoDB
-•Mongoose
-Real-time chat app
-• Self learning project
-• Tech stack used - node.js, Socket.IO
-EDUCATION
-B.Tech in Computer Science and Engineering,NIET GREATER NOIDA2019-2023
-2023
-SKILLS
-SKILLS
-Technical Skills - C++, HTML5, CSS, JavaScript, Node.js, React
-Coursework - Data Structures and Algorithms, OOPs
-Frameworks - Express.js
-Tools - Sublime Text, VSCode
-Databases: MySQL, MongoDB
-Version Control - Git
-Leetcode - https://leetcode.com/Saurabh_Upadhyay/
-SOFT SKILLS
-Verbal and Written Communication
-Collaborative
-Quick to adapt
-Detail-Oriented
-Diligent`;
-
+SAURABH UPADHYAY 9936498445 ⋄ Renukoot, Sonbhadra Email ⋄ Linkedin ⋄ Github ⋄ Portfolio OBJECTIVE Enthusiastic team player ready to contribute to company success. I take keen interest in full stack development. Seeking opportunities to further enhance my technical skills.. SKILLS SUMMARY Languages : Freamworks : Tools : Skills : EDUCATION JavaScript,C++,Typescript,C,HTML,CSS Node.js, Express.js, MongoDB, React.js, Next.js, MySQL, Tailwind CSS Git, Postman, REST APIs, Linux Front-end, Back-end, Agile B.Tech, Computer Science Engineering, NIET, Greater Noida EXPERIENCE 2019- 2023 Senior Associate Genpact • Master Data Management PROJECTS Sept 2023- Sept 2024 Noida SilentEcho (Fullstack,Typescript) (Link) (Github Link) • Developed a production-level app in Next.js, incorporating Zod for robust data validation, Resend for email handling, and NextAuth for authentication, including custom OTP functionality. • Integrated advanced features like AI-driven components, message APIs with aggregation pipelines, and React Hook Form with shadcn for enhanced user interactions and form handling. • Built and enhanced the user dashboard and navigation, ensuring seamless interaction with features like carousel elements, debouncing, and error management to deliver a smooth user experience. SaaSify (Front-end, Typescript) (Link) (Github Link) • Developed a responsive SaaS landing page using React, Next.js, TailwindCSS, and Framer Motion, with a focus on engaging animations and visual appeal. • Implemented dynamic features such as parallax effects and micro-interactions to enhance user experience across devices. • Optimized product showcase, pricing, and testimonials sections for consistency and responsiveness on mobile, tablet, and desktop views. INTERPERSONAL SKILLS • Problem solving, Verbal and Written Communication, Collaborative, Quick to adapt, Detail-Oriented. OTHER LINKS • Leetcode • Geeksforgeeks;
+`;
 export async function POST(req) {
   try {
     const { messages } = await req.json();
