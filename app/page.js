@@ -373,7 +373,7 @@ export default function Home() {
               className="bento-item"
             >
               <Image
-                src="/imgs/bento-1.png"
+                src="/imgs/bento-1.jpg"
                 alt="BGCCI"
                 width={400}
                 height={300}
