@@ -389,7 +389,7 @@ export default function Home() {
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            </*a href="#" className="bento-item">
+            /*<a href="#" className="bento-item">
               <Image
                 src="/imgs/bento-3.jpg"
                 alt="Harley"
