@@ -380,7 +380,7 @@ export default function Home() {
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            { <a href="#" className="bento-item">
+            { <a href="globetrotter-flax.vercel.app" className="bento-item">
               <Image
                 src="/imgs/bento-2.png"
                 alt="Churhview"
@@ -389,7 +389,7 @@ export default function Home() {
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            /*<a href="#" className="bento-item">
+            <a href="#" className="bento-item">
               <Image
                 src="/imgs/bento-3.jpg"
                 alt="Harley"
@@ -415,7 +415,7 @@ export default function Home() {
                 height={300}
                 style={{ width: '100%', height: '100%' }}
               />
-            </a> */}
+            </a> }
             <a
               href="https://saas-landing-page-wine.vercel.app/"
               className="bento-item"
