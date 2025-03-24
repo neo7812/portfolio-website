@@ -384,9 +384,9 @@ export default function Home() {
               <Image
                 src="/imgs/bento-2.png"
                 alt="Churhview"
-                width={400}
-                height={300}
-                style={{ width: '100%', height: '100%' }}
+                width={200}
+                height={150}
+                style={{ width: '100%', height: 'auto' }}
               />
             </a>
             {/* <a href="#" className="bento-item">
@@ -423,9 +423,9 @@ export default function Home() {
               <Image
                 src="/imgs/bento-7.png"
                 alt="School"
-                width={400}
-                height={300}
-                style={{ width: '100%', height: '100%' }}
+                width={200}
+                height={150}
+                style={{ width: '100%', height: 'auto' }}
               />
             </a>
           </div>
