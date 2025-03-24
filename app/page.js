@@ -386,7 +386,7 @@ export default function Home() {
                 alt="Churhview"
                 width={200}
                 height={150}
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: '100%', height: '100%' }}
               />
             </a>
             {/* <a href="#" className="bento-item">
