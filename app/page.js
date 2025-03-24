@@ -374,7 +374,7 @@ export default function Home() {
             >
               <Image
                 src="/imgs/bento-1.jpg"
-                alt="BGCCI"
+                alt="Silent_echo"
                 width={400}
                 height={300}
                 style={{ width: '100%', height: '100%' }}
@@ -383,7 +383,7 @@ export default function Home() {
             <a href="https://globetrotter-flax.vercel.app/" className="bento-item">
               <Image
                 src="/imgs/bento-2.png"
-                alt="Churhview"
+                alt="Gametrotter"
                 width={200}
                 height={150}
                 style={{ width: '100%', height: '100%' }}
@@ -422,7 +422,7 @@ export default function Home() {
             >
               <Image
                 src="/imgs/bento-7.png"
-                alt="School"
+                alt="Saas"
                 width={200}
                 height={150}
                 style={{ width: '100%', height: 'auto' }}
