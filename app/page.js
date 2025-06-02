@@ -134,7 +134,7 @@ export default function Home() {
                 stacks.
               </p>
               <div className="call-to-action">
-                <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:9ec6812c-8a73-4cb0-9d0d-07af5e1044ef" className="button black">
+                <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:6d24cf40-29ad-429b-916f-708d0ef4dea1" className="button black">
                   View Resume
                 </a>
                 <a href="mailto:saurabhu294@gmail.com" className="button white">
@@ -450,7 +450,7 @@ export default function Home() {
                 you have a project you think I&apos;d be a good fit for, please
                 get in touch!
               </p>
-              <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:9ec6812c-8a73-4cb0-9d0d-07af5e1044ef" className="button black">
+              <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:6d24cf40-29ad-429b-916f-708d0ef4dea1" className="button black">
                 Download Resume
               </a>
             </div>
