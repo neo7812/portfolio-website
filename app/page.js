@@ -360,8 +360,8 @@ export default function Home() {
                 </div>
               </figure>
               <h3>Genpact- Senior Associate</h3>
-              <div>2023-current</div>
-              <p>Master Data Management</p>
+              <div>2023-2024</div>
+              <p>Assisted in developing and optimizing react components for web applications.</p>
             </article>
           </div>
         </section>
