@@ -398,36 +398,36 @@ export default function Home() {
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            {/* <a href="#" className="bento-item">
+            <a href="https://saas-landing-page-wine.vercel.app/" className="bento-item">
               <Image
-                src="/imgs/bento-5.jpg"
+                src="/imgs/bento-7.jpg"
                 alt="Bunbury"
                 width={400}
                 height={300}
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            <a href="#" className="bento-item">
-              <Image
-                src="/imgs/bento-6.jpg"
-                alt="Running"
-                width={400}
-                height={300}
-                style={{ width: '100%', height: '100%' }}
-              />
-            </a> */}
-            <a
-              href="https://saas-landing-page-wine.vercel.app/"
-              className="bento-item"
-            >
-              <Image
-                src="/imgs/bento-7.png"
-                alt="Saas"
-                width={400}
-                height={250}
-                style={{ width: '100%', height: '100%' }}
-              />
-            </a>
+            // <a href="#" className="bento-item">
+            //   <Image
+            //     src="/imgs/bento-6.jpg"
+            //     alt="Running"
+            //     width={400}
+            //     height={300}
+            //     style={{ width: '100%', height: '100%' }}
+            //   />
+            // </a>
+            // <a
+            //   href="https://saas-landing-page-wine.vercel.app/"
+            //   className="bento-item"
+            // >
+            //   <Image
+            //     src="/imgs/bento-7.png"
+            //     alt="Saas"
+            //     width={400}
+            //     height={250}
+            //     style={{ width: '100%', height: '100%' }}
+            //   />
+            // </a>
           </div>
         </section>
         <section className="chatbot container">
