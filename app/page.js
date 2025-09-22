@@ -400,7 +400,7 @@ export default function Home() {
             </a>
             <a href="https://saas-landing-page-wine.vercel.app/" className="bento-item">
               <Image
-                src="/imgs/bento-7.jpg"
+                src="/imgs/bento-7.png"
                 alt="Bunbury"
                 width={400}
                 height={300}
