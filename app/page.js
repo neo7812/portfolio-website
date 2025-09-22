@@ -389,7 +389,7 @@ export default function Home() {
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            <a href="#" className="bento-item">
+            <a href="https://ev-dashboard-phi-neon.vercel.app/" className="bento-item">
               <Image
                 src="/imgs/bento-3.png"
                 alt="Harley"
@@ -423,8 +423,8 @@ export default function Home() {
               <Image
                 src="/imgs/bento-7.png"
                 alt="Saas"
-                width={200}
-                height={150}
+                width={400}
+                height={250}
                 style={{ width: '100%', height: 'auto' }}
               />
             </a>
