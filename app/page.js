@@ -398,7 +398,7 @@ export default function Home() {
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-{/*<a href="https://saas-landing-page-wine.vercel.app/" className="bento-item">
+            <a href="https://saas-landing-page-wine.vercel.app/" className="bento-item">
               <Image
                 src="/imgs/bento-7.png"
                 alt="Bunbury"
@@ -407,7 +407,7 @@ export default function Home() {
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            <a href="#" className="bento-item">
+            {/*<a href="#" className="bento-item">
               <Image
                 src="/imgs/bento-6.jpg"
                 alt="Running"
