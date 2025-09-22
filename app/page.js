@@ -391,7 +391,7 @@ export default function Home() {
             </a>
             <a href="#" className="bento-item">
               <Image
-                src="/imgs/bento-3.jpg"
+                src="/imgs/bento-3.png"
                 alt="Harley"
                 width={400}
                 height={300}
