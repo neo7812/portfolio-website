@@ -425,7 +425,7 @@ export default function Home() {
                 alt="Saas"
                 width={400}
                 height={250}
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: '100%', height: '100%' }}
               />
             </a>
           </div>
