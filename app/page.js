@@ -398,24 +398,24 @@ export default function Home() {
                 style={{ width: '100%', height: '100%' }}
               />
             </a>
-            // <a href="https://saas-landing-page-wine.vercel.app/" className="bento-item">
-            //   <Image
-            //     src="/imgs/bento-7.png"
-            //     alt="Bunbury"
-            //     width={400}
-            //     height={300}
-            //     style={{ width: '100%', height: '100%' }}
-            //   />
-            // </a>
-            // <a href="#" className="bento-item">
-            //   <Image
-            //     src="/imgs/bento-6.jpg"
-            //     alt="Running"
-            //     width={400}
-            //     height={300}
-            //     style={{ width: '100%', height: '100%' }}
-            //   />
-            // </a>
+{/*<a href="https://saas-landing-page-wine.vercel.app/" className="bento-item">
+              <Image
+                src="/imgs/bento-7.png"
+                alt="Bunbury"
+                width={400}
+                height={300}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </a>
+            <a href="#" className="bento-item">
+              <Image
+                src="/imgs/bento-6.jpg"
+                alt="Running"
+                width={400}
+                height={300}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </a>
             <a
               href="https://saas-landing-page-wine.vercel.app/"
               className="bento-item"
@@ -427,7 +427,7 @@ export default function Home() {
                 height={350}
                 style={{ width: '100%', height: '100%' }}
               />
-            </a>
+            </a>*/}
           </div>
         </section>
         <section className="chatbot container">
